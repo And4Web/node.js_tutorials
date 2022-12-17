@@ -1,0 +1,5 @@
+following resources are good for node.js preparation(notes are from these):
+
+(1)https://www.geeksforgeeks.org/node-js-fs-mkdir-method/
+
+(2)https://www.tutorialkart.com/nodejs
