@@ -1,0 +1,40 @@
+all notes from nodejs.org and https://www.geeksforgeeks.org/node-js-file-system/?ref=lbp
+
+important methods:
+(1)read file:
+  fs.readFile()
+(2)using unlink from fs/promises or fs.unlink() to delete a file:
+  fs.unlink()
+(3)read files in a directory:
+  fs.readdir()
+(4)write to a file:
+  fs.writeFile()
+(5)reading a file into a buffer using streams:
+  fs.createReadStream()
+(6)copy files by piping streams:
+  readable = fs.createReadStream()
+  writable = fs.createWriteStream()
+  readable.pipe(writable);
+(7)Open a File:
+  fs.open(path, flags, mode, callback)
+(8)Reading a File:
+  fs.read(fd, buffer, offset, length, position, callback)
+(9)Appending to a File:
+  fs.appendFile(filepath, data, options, callback)
+(10)Closing the File:
+  fs.close(fd, callback)
+(11)Delete a File:
+  fs.unlink(path, callback)
+(12)test whether the given path exists or not in the file system:
+  fs.exists( path, callback )
+(13)create a directory asynchronously:
+  fs.mkdir(path, mode, callback)
+(14)change the size of the file i.e either increase or decrease the file size. This method changes the length of the file at the path by len bytes:
+  fs.truncate( path, len, callback )
+(15)synchronously rename a file at the given old path to the given new path:
+  fs.renameSync( oldPath, newPath )
+(16)delete a directory at the given path:
+  fs.rmdir( path, options, callback )
+(17)return information about the given file or directory:
+  fs.stat( path, options, callback )
+(18)  
