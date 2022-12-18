@@ -1,0 +1,5 @@
+# in path module the most important methods are: 
+  join, resolve, relative, parse, normalize, format,
+
+# some less important but useful methods are: 
+  basename, dirname, extname

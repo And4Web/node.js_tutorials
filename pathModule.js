@@ -24,5 +24,3 @@ let output = {baseName, dirName, extName, format, isAbsolute, parse, join, norma
 
 console.log(output);
 
-//in path module the most important methods are: join, resolve, relative, parse, normalize, format,
-//some less important but useful methods are: basename, dirname, extname
