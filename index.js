@@ -14,5 +14,18 @@ paramObj = {
 }
 
 let params = new URLSearchParams(paramObj)
-console.log(params.toString());
+let params2 = new URLSearchParams(myUrl);
+let paramsObj = {
+  name: params2.get('name'),
+  age: params2.get('age'),
+  profession: params2.get('profession')
+}
+// console.log("https://geeksforgeeks.org/p/a/t/h?query=string&" + params.toString());
 // console.log(params.toString())
+// console.log(">>>Params2:", paramsObj);
+const map = new Map();
+map.set('West Bengal', 'Kolkata');
+map.set('Karnataka', 'Bengaluru');
+params = new URLSearchParams(map);
+params.set("Jammu", "Kashmir")
+console.log("https://geeksforgeeks.org/p/a/t/h?query=string&" + params.toString());
