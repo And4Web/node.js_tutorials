@@ -1,3 +1,5 @@
+// source: https://www.geeksforgeeks.org/node-js-agent-maxsockets-method/
+
 /*
 To make HTTP requests in Node.js, there is a built-in module HTTP in Node.js to transfer data over the HTTP. To use the HTTP server in node, we need to require the HTTP module. The HTTP module creates an HTTP server that listens to server ports and gives a response back to the client.
 */
@@ -167,6 +169,7 @@ req.end();
 
 /****************************************************
  >>>HTTP protocol and Web Sockets Protocol<<<
+
  HTTP and WebSocket both are communication protocols used in client-server communication.
 
  >>>>HTTP protocol: 
@@ -200,5 +203,9 @@ Note: RESTful web services are sufficient to get the data from the server if we 
 Differences between HTTP and WebSocket Connection: 
 Read here:
 https://www.geeksforgeeks.org/what-is-web-socket-and-how-it-is-different-from-the-http/
+
+
+Note: Depending on your project you have to choose where it will be WebSocket or HTTP Connection.
+
 
 *****************************************************/
