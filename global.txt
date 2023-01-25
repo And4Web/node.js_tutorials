@@ -1,0 +1,39 @@
+all notes from: https://www.geeksforgeeks.org/node-js-globals-complete-reference/?ref=lbp
+
+important methods:
+#Timers module has the following functions:
+Scheduling Timers: It is used to call a function after a set period of time.
+(1) setImmediate()
+(2) setInterval()
+(3) setTimeout()
+Cancelling Timers: It is used to cancel the scheduled timer.
+(4) clearImmediate()
+(5) clearInterval()
+(6) clearTimeout()
+#Node.js URL() Method
+(7) new URL(input[, base])
+(8) url.parse()
+#Node.js URLsearchParams API
+(9) new URLSearchParams('user=abc&q=xyz')
+new URLSearchParams(obj)
+new URLSearchParams(iterable)
+
+#Accessing the URL query:
+const myURL = new URL('https://example.org/?abc=123&xyz=526');
+(10) myURL.searchParams.get('abc')
+(11) myURL.searchParams.getAll('abc')
+(12) myURL.searchParams.has('abc')
+
+#Manipulating the URL query:
+const params = new URLSearchParams('abc=123&xyz=526&abc=258');
+(13) params.toString()
+(14) params.append('foo', '789');
+(15) params.delete('foo');
+(16) params.sort();
+
+#Iterating the URL query:
+const params = new URLSearchParams('query=node&type=search&passwd=3456');
+(18) params.entries()
+(19) params.keys()
+(20) params.values()
+(21) params.forEach(fn[, arg])
