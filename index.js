@@ -5,15 +5,15 @@ const stream = require('stream');
 const {EventEmitter} = require('events');
 
 const myEvent = new EventEmitter();
-// console.log(myEvent)
 
-myEvent.on('event', ()=>{
-  console.log("event listened as event has emitted.")
-})
-myEvent.on("event", ()=>{
-  console.log('this is the second user')
-})
-
-myEvent.emit("event", ()=>{
-  console.log('event emitted.')
-})
+myEvent.on('event', function(a, b) {
+  console.log(a, b, this, this === myEvent);
+  // Prints:
+  //   a b MyEmitter {
+  //     _events: [Object: null prototype] { event: [Function (anonymous)] },
+  //     _eventsCount: 1,
+  //     _maxListeners: undefined,
+  //     [Symbol(kCapture)]: false
+  //   } true
+});
+myEvent.emit('event', 'a', 'b');
