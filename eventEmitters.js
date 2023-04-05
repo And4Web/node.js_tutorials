@@ -23,4 +23,51 @@ myEmitter.on('event', function(a, b) {
   //     [Symbol(kCapture)]: false
   //   } true
 });
-myEmitter.emit('event', 'a', 'b');
+
+// myEmitter.emit('event', 'a', 'b');
+// It is possible to use ES6 Arrow Functions as listeners, however, when doing so, the this keyword will no longer reference the EventEmitter instance:
+myEmitter.on('event', (a, b) => {
+  console.log(a, b, this);
+  // Prints: a b {}
+});
+
+// myEmitter.emit('event', 'a', 'b');
+
+// Asynchronous vs. synchronous
+myEmitter.on('event', (a, b) => {
+  setImmediate(() => {
+    console.log('this happens immediately but asynchronously',a,b);
+  });
+  setTimeout(()=>{
+    console.log("this return after 2 seconds...",a,b)
+  }, 2000)
+});
+
+// myEmitter.emit('event', 'anand', 'atul');
+
+// Handling events only once
+myEmitter.once('event', () => {
+  console.log(++m);
+});
+// myEmitter.emit('event');
+// Prints: 1
+// myEmitter.emit('event');
+// Ignored
+
+// Error events:
+myEmitter.on("error", (error)=>{
+  console.log("Error: ", error.message);
+})
+
+myEmitter.on(errorMonitor, (err) => {
+  MyMonitoringTool.log(err);
+});
+
+myEmitter.emit('error', new Error('whoops!'));
+myEmitter.emit('event');
+
+// Capture rejections of promises
+const ee = new EventEmitter();
+ee.on('something', async (value) => {
+  throw new Error('kaboom');
+});
