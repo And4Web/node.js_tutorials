@@ -25,6 +25,7 @@ myEmitter.on('event', function(a, b) {
 });
 
 // myEmitter.emit('event', 'a', 'b');
+
 // It is possible to use ES6 Arrow Functions as listeners, however, when doing so, the this keyword will no longer reference the EventEmitter instance:
 myEmitter.on('event', (a, b) => {
   console.log(a, b, this);
